@@ -1,0 +1,12 @@
+# input and output files
+
+input.txt
+output.txt
+
+# virtual enviroment dir
+
+\venv
+
+# additional files
+
+\.mypy_cache
