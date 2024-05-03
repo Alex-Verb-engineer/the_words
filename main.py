@@ -16,10 +16,15 @@ def column_to_comma_string(input_file, output_file, avoided_file=None):
         avoided = avoided_file.readlines()
     else:
         avoided = []
+    avoided = set(avoided)
 
-    for line in input_file:
-        if line not in avoided:
-            output_file.write(line[:-1] + ', ')
+    words = input_file.readlines()
+    words = set(words)
+
+    words = words.difference(avoided)
+
+    for word in words:
+        output_file.write(word[:-1] + ', ')
 
 
 if __name__ == '__main__':
